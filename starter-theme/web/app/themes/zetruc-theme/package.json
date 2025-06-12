@@ -15,15 +15,14 @@
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
     "format": "prettier --write ."
-
   },
   "devDependencies": {
     "@roots/vite-plugin": "^1.0.2",
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.1.10",
     "laravel-vite-plugin": "^1.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-blade": "^2.1.21",
-    "tailwindcss": "^4.0.9",
+    "tailwindcss": "^4.1.10",
     "vite": "^6.2.0"
   }
 }

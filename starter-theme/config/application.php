@@ -73,6 +73,9 @@ if (!env('WP_ENVIRONMENT_TYPE') && in_array(WP_ENV, ['production', 'staging', 'd
 Config::define('WP_HOME', env('WP_HOME'));
 Config::define('WP_SITEURL', env('WP_SITEURL'));
 
+define('FS_METHOD', 'direct');
+
+
 /**
  * Custom Content Directory
  */
