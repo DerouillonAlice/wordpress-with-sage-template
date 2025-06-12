@@ -27,7 +27,21 @@ git clone git@github.com:DerouillonAlice/sage-starter.git mon-projet
 cd mon-projet
 ```
 
-### 2. Copier le fichier .env
+### 2. Initialisation
+
+Renommer le dossier du projet
+Corriger le .env en mettant le nom du projet
+Corriger le docker-compose.yml
+
+```bash
+cp docker-compose.yml.example docker-compose.yml
+```
+
+Remplir avec les bonnes informations
+
+- [ ] MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
+
+Se rendre dans le dossier du projet et modifier le .env
 
 ```bash
 cp .env.example .env
@@ -46,9 +60,10 @@ Ajouter l'utilisateur WSL au groupe www-data (Apache)
 ```bash
 sudo usermod -a -G www-data $USER #a faire que la première fois
 sudo chown -R $USER:www-data web
+sudo chmod -R 775 web
 ```
 
-Modifier le nom du projet dans le fichier vite.config.js
+Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.config.js
 
 ```bash
   base: '/app/themes/zetruc-theme/public/build/',
