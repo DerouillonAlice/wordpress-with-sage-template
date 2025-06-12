@@ -153,3 +153,15 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+$autoload_dirs = [
+    'resources/metaboxes',
+    'resources/post-types',
+    'resources/taxonomies',
+];
+
+foreach ($autoload_dirs as $dir) {
+    foreach (glob(get_theme_file_path("{$dir}/*.php")) as $file) {
+        require_once $file;
+    }
+}
