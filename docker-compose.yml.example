@@ -1,0 +1,30 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: php:8.2-apache
+    container_name: ${PROJECT_NAME}_php
+    volumes:
+      - ./${PROJECT_NAME}:/var/www
+    working_dir: /var/www/web
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.6
+    container_name: ${PROJECT_NAME}_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mdp_root
+      MYSQL_DATABASE: nom_bdd
+      MYSQL_USER: utilisateur
+      MYSQL_PASSWORD: mot_de_passe
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
