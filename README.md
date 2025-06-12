@@ -81,6 +81,7 @@ Dans le dossier themes
 
 ```bash
 npm install
+composer install
 ```
 
 ### 5. Démarrer les containers Docker
