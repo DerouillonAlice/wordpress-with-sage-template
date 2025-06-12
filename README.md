@@ -20,7 +20,7 @@
 
 ### 1. Cloner le repo
 ```bash
-git clone git@github.com:ton-org/start-theme.git mon-projet
+git clone git@github.com:DerouillonAlice/sage-starter.git mon-projet
 cd mon-projet
 ```
 ### 2. Copier le fichier .env
