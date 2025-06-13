@@ -13,8 +13,28 @@
   - Apply & Restart
 
 - [ ] **Git**
+
+```bash
+apt get update
+apt install git
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
 - [ ] **Composer**
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
 - [ ] **Node.js + npm**
+
+```bash
+npm install -g npm
+```
 
 ---
 
@@ -32,16 +52,18 @@ cd mon-projet
 Renommer le dossier du projet ainsi que le docker compose
 
 ```bash
+mv starter-theme mon-projet
 cp docker-compose.yml.example docker-compose.yml
 ```
 
-Corriger le .env en mettant le nom du projet et les champs suivants
+Corriger le .env en mettant le nom du projet et remplir les champs suivants
 
 - [ ] MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
 
 Se rendre dans le dossier du projet et modifier le .env
 
 ```bash
+cd mon-projet
 cp .env.example .env
 ```
 
@@ -56,6 +78,7 @@ cp .env.example .env
 Ajouter l'utilisateur WSL au groupe www-data (Apache)
 
 ```bash
+#remplacer $USER par utilisateur wsl
 sudo usermod -a -G www-data $USER #a faire que la première fois
 sudo chown -R $USER:www-data web
 sudo chmod -R 775 web
@@ -64,18 +87,22 @@ sudo chmod -R 775 web
 Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.config.js
 
 ```bash
-  base: '/app/themes/zetruc-theme/public/build/',
+  cd web/app/themes
+  mv starter-theme mon-projet
+  cd mon-projet
+  nano vite.config.js
+  #ligne à remplacer : base: '/app/themes/mon-projet/public/build/',
 ```
 
 ### 4. Installer les dépendances
 
-Dans le dossier racine
+Dans le dossier racine (/mon-projet)
 
 ```bash
 composer install
 ```
 
-Dans le dossier themes
+Dans le dossier themes (/mon-projet/web/app/themes/mon-projet)
 
 ```bash
 npm install
@@ -84,13 +111,13 @@ composer install
 
 ### 5. Démarrer les containers Docker
 
-Démarrage initial
+Démarrage initial (dans le dossier où se trouve le docker-compose)
 
 ```bash
 docker compose --env-file .env up --build -d
 ```
 
-Compilation
+Compilation (dans le dossier du thème)
 
 ```bash
 npm run build
@@ -99,7 +126,7 @@ npm run build
 ### Finalisation
 
 - [ ] Accéder à WordPress :
-      http://localhost:8000/wp/wp-admin/install.php
+      http://localhost:8000/
 
 - [ ] Installer WordPress normalement (compte admin, nom du site…)
 
