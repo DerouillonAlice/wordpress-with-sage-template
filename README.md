@@ -15,8 +15,8 @@
 - [ ] **Git**
 
 ```bash
-apt get update
-apt install git
+apt-get update
+apt-get install git
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
