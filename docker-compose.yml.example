@@ -3,13 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: php:8.2-apache
     container_name: ${PROJECT_NAME}_php
     volumes:
       - ./${PROJECT_NAME}:/var/www
     working_dir: /var/www/web
     ports:
-      - "8000:80"
+      - "${PHP_PORT}:80"
     depends_on:
       - db
 
@@ -18,10 +17,10 @@ services:
     container_name: ${PROJECT_NAME}_db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: mdp_root
-      MYSQL_DATABASE: nom_bdd
-      MYSQL_USER: utilisateur
-      MYSQL_PASSWORD: mot_de_passe
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
 
