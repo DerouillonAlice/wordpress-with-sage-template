@@ -20,7 +20,7 @@ add_filter('rwmb_meta_boxes', function ($meta_boxes) {
                 'type' => 'text',
             ],
             [
-                'name' => 'Image d’illustration',
+                'name' => 'Image illustration',
                 'id'   => 'home_section_image',
                 'type' => 'image_advanced',
                 'max_file_uploads' => 1,
