@@ -29,15 +29,13 @@ cd mon-projet
 
 ### 2. Initialisation
 
-Renommer le dossier du projet
-Corriger le .env en mettant le nom du projet
-Corriger le docker-compose.yml
+Renommer le dossier du projet ainsi que le docker compose
 
 ```bash
 cp docker-compose.yml.example docker-compose.yml
 ```
 
-Remplir avec les bonnes informations
+Corriger le .env en mettant le nom du projet et les champs suivants
 
 - [ ] MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
 
@@ -95,8 +93,6 @@ docker compose --env-file .env up --build -d
 Compilation
 
 ```bash
-npm run dev
-# ou
 npm run build
 ```
 
