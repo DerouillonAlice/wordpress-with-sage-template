@@ -125,6 +125,12 @@ Compilation (dans le dossier du thème)
 npm run build
 ```
 
+### Formatage du code
+
+`npm run format` : formate les fichiers dans le dossier du thème avec Prettier.
+`composer lint` : vérifie le code PHP avec les règles PSR-12.
+
+
 ### Finalisation
 
 - [ ] Accéder à WordPress :
