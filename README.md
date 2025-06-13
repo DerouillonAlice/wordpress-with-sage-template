@@ -88,19 +88,21 @@ Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.confi
 
 ```bash
   cd web/app/themes
-  mv starter-theme mon-projet
+  mv zetruc-theme mon-projet
   cd mon-projet
   nano vite.config.js
   #ligne à remplacer : base: '/app/themes/mon-projet/public/build/',
 ```
 
-### 4. Installer les dépendances
+### 4. Démarrer les containers Docker
 
-Dans le dossier racine (/mon-projet)
+Démarrage initial (dans le dossier où se trouve le docker-compose)
 
 ```bash
-composer install
+docker compose --env-file .env up --build -d
 ```
+
+### 5. Installer les dépendances
 
 Dans le dossier themes (/mon-projet/web/app/themes/mon-projet)
 
@@ -109,13 +111,13 @@ npm install
 composer install
 ```
 
-### 5. Démarrer les containers Docker
 
-Démarrage initial (dans le dossier où se trouve le docker-compose)
+Dans le dossier racine (/mon-projet)
 
 ```bash
-docker compose --env-file .env up --build -d
+composer install
 ```
+
 
 Compilation (dans le dossier du thème)
 
@@ -141,4 +143,4 @@ php_value upload_max_filesize 10M
 php_value post_max_size 20M
 ```
 
-✨ Fait avec ❤️ par Alice
+Fait avec ❤️ par Alice
