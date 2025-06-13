@@ -49,28 +49,16 @@ cd mon-projet
 
 ### 2. Initialisation
 
-Renommer le dossier du projet ainsi que le docker compose
+Renommer le docker compose
 
 ```bash
-mv starter-theme mon-projet
 cp docker-compose.yml.example docker-compose.yml
 ```
 
 Corriger le .env en mettant le nom du projet et remplir les champs suivants
 
-- [ ] MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
-
-Se rendre dans le dossier du projet et modifier le .env
-
-```bash
-cd mon-projet
-cp .env.example .env
-```
-
-- [ ] WP_HOME=http://localhost:8000
-
-- [ ] DB_NAME, DB_USER, DB_PASSWORD
-
+- [ ] PROJECT_NAME
+- [ ] DB_NAME, DB_USER, DB_PASSWORD, DB_ROOT_PASSWORD
 - [ ] Génèrer et coller les salts ici → https://roots.io/salts.html
 
 ### 3. Configuration
@@ -96,7 +84,7 @@ Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.confi
 
 ### 4. Démarrer les containers Docker
 
-Démarrage initial (dans le dossier où se trouve le docker-compose)
+Démarrage initial (dans le dossier racine)
 
 ```bash
 docker compose --env-file .env up --build -d
@@ -104,20 +92,18 @@ docker compose --env-file .env up --build -d
 
 ### 5. Installer les dépendances
 
-Dans le dossier themes (/mon-projet/web/app/themes/mon-projet)
+Dans le dossier themes (web/app/themes/mon-projet)
 
 ```bash
 npm install
 composer install
 ```
 
-
-Dans le dossier racine (/mon-projet)
+Dans le dossier racine
 
 ```bash
 composer install
 ```
-
 
 Compilation (dans le dossier du thème)
 
