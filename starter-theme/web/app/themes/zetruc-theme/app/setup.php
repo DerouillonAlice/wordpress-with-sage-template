@@ -78,6 +78,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'header_navigation' => __('Header', 'sage'),
         'footer_navigation' => __('Footer', 'sage'),
+        #additional menus can be added here
     ]);
 
     /**
@@ -166,3 +167,6 @@ foreach ($autoload_dirs as $dir) {
         require_once $file;
     }
 }
+
+require_once __DIR__ . '/image-sizes.php';
+
