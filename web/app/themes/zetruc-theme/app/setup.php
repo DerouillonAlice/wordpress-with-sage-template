@@ -157,9 +157,9 @@ add_action('widgets_init', function () {
 });
 
 $autoload_dirs = [
-    'resources/metaboxes',
-    'resources/post-types',
-    'resources/taxonomies',
+    'inc/metaboxes',
+    'inc/customposts',
+    'inc/pages'
 ];
 
 foreach ($autoload_dirs as $dir) {
