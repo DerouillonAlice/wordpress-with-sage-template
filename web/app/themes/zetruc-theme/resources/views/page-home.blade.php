@@ -43,15 +43,15 @@
             <div class="p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition">
 
                 <div class="flex justify-center mb-4">
-                    <img src="{{get_field('services_icon' , $service->ID)}}" alt="" class="h-20 w-20 object-contain">
+                    <img src="{{ get_field('services_icon', $service->ID) }}" alt="" class="h-20 w-20 object-contain">
                 </div>
 
                 <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">{{ $service->post_title }}</h3>
-                <p class="text-gray-600 text-center mb-6">{!! $desc ?? ""!!}</p>
+                <p class="text-gray-600 text-center mb-6">{!! get_field('services_desc', $service->ID) !!}</p>
 
                 <div class="text-center">
-                    <a href="{{ $link ?? ""}}" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                        {{ $label ?? "" }}
+                    <a href="{{ get_field('services_link', $service->ID) }}" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+                        {{ get_field('services_link_text', $service->ID) }}
                     </a>
                 </div>
             </div>
