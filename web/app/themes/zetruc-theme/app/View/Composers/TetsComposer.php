@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class HomeComposer extends Composer
+class TetsComposer extends Composer
 {
     /**
      * List of views served by this composer.
@@ -12,7 +12,7 @@ class HomeComposer extends Composer
      * @return array
      */
     protected static $views = [
-        'page-home',
+        'page-tets',
     ];
 
     /**
@@ -23,9 +23,8 @@ class HomeComposer extends Composer
     public function override()
     {
         return [
-            'home_section_title' => get_field('home_section_title'),
-            'home_section_image' => get_field('home_section_image'),
-            'home_section_content' => get_field('home_section_content'),
+            'tets_section_title' => get_field('tets_section_title'),
+            'tets_section_content' => get_field('tets_section_content'),
         ];
     }
 }

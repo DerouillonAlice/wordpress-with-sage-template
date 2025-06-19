@@ -18,35 +18,47 @@ add_action('init', function () {
     ]);
 });
 
-add_filter('rwmb_meta_boxes', function ($meta_boxes) {
-    $meta_boxes[] = [
-        'title'      => 'Informations du service',
-        'id'         => 'services_cp',
-        'post_types' => ['services'],
-        'fields'     => [
+add_filter('acf/settings/show_admin', '__return_true');
+
+add_action('acf/init', function () {
+    acf_add_local_field_group([
+        'key' => 'group_services_fields',
+        'title' => 'Informations du service',
+        'fields' => [
             [
-                'id'               => 'services_icon',
-                'name'             => 'Icône',
-                'type'             => 'image_advanced',
-                'max_file_uploads' => 1,
+                'key' => 'field_services_icon',
+                'label' => 'Icône',
+                'name' => 'services_icon',
+                'type' => 'image',
+                'return_format' => 'url',
             ],
             [
-                'id'   => 'services_desc',
-                'name' => 'Description du Service',
+                'key' => 'field_services_desc',
+                'label' => 'Description du Service',
+                'name' => 'services_desc',
                 'type' => 'wysiwyg',
             ],
             [
-                'id'   => 'services_link',
-                'name' => 'Lien du bouton',
+                'key' => 'field_services_link',
+                'label' => 'Lien du bouton',
+                'name' => 'services_link',
                 'type' => 'url',
             ],
             [
-                'id'   => 'services_link_text',
-                'name' => 'Texte du bouton',
+                'key' => 'field_services_link_text',
+                'label' => 'Texte du bouton',
+                'name' => 'services_link_text',
                 'type' => 'text',
             ],
         ],
-    ];
-
-    return $meta_boxes;
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'services',
+                ],
+            ],
+        ],
+    ]);
 });

@@ -1,37 +1,61 @@
 <?php
 
-add_filter('rwmb_meta_boxes', function ($meta_boxes) {
-    $meta_boxes[] = [
-        'title'      => 'Contenu de la page d’accueil',
-        'id'         => 'home_content',
-        'post_types' => ['page'],
-        'include'    => [
-            'relation' => 'AND',
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group([
+        'key' => 'group_home_content',
+        'title' => 'Contenu de la page d’accueil',
+        'fields' => [
             [
-                'key'     => '_wp_page_template',
-                'value'   => 'views/page-home.blade.php',
-                'compare' => '=',
+                'key' => 'field_tab_1',
+                'label' => 'Section principale',
+                'type' => 'tab',
+                'placement' => 'top',
             ],
-        ],
-        'fields'     => [
             [
-                'name' => 'Titre de la section',
-                'id'   => 'home_section_title',
+                'key' => 'field_home_section_title',
+                'label' => 'Titre de la section',
+                'name' => 'home_section_title',
                 'type' => 'text',
             ],
             [
-                'name' => 'Image illustration',
-                'id'   => 'home_section_image',
-                'type' => 'image_advanced',
-                'max_file_uploads' => 1,
+                'key' => 'field_home_section_image',
+                'label' => 'Image illustration',
+                'name' => 'home_section_image',
+                'type' => 'image',
+                'return_format' => 'url',
             ],
             [
-                'name' => 'Contenu',
-                'id'   => 'home_section_content',
+                'key' => 'field_home_section_content',
+                'label' => 'Contenu',
+                'name' => 'home_section_content',
                 'type' => 'wysiwyg',
             ],
+            [
+                'key' => 'field_tab_2',
+                'label' => 'Onglet supplémentaire',
+                'type' => 'tab',
+            ],
+            [
+                'key' => 'field_extra_section_title',
+                'label' => 'Titre supplémentaire',
+                'name' => 'extra_section_title',
+                'type' => 'text',
+            ],
+            [
+                'key' => 'field_extra_section_content',
+                'label' => 'Contenu supplémentaire',
+                'name' => 'extra_section_content',
+                'type' => 'textarea',
+            ],
         ],
-    ];
-
-    return $meta_boxes;
-});
+        'location' => [
+            [
+                [
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-home.blade.php',
+                ],
+            ],
+        ],
+    ]);
+}
