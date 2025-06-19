@@ -16,6 +16,18 @@ add_action('init', function () {
         'rewrite'         => ['slug' => 'services'],
         'supports'        => ['title', 'editor', 'thumbnail', 'page-attributes'],
     ]);
+
+    register_taxonomy('service_category', 'services', [
+        'label'        => 'Catégories de Services',
+        'labels'       => [
+            'name'          => 'Catégories de Services',
+            'singular_name' => 'Catégorie de Service',
+        ],
+        'public'       => true,
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'rewrite'      => ['slug' => 'service-category'],
+    ]);
 });
 
 add_filter('acf/settings/show_admin', '__return_true');
