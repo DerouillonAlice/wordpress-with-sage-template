@@ -66,7 +66,7 @@ Template Name: Home
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ $category->name }}</h3>
                             <p class="text-gray-600 mb-4">{{ $category->description }}</p>
                         <a href="{{ get_term_link($category) }}" class="text-blue-600 hover:text-blue-800">
-                            Voir les services ({{ $category->count }})
+                            Voir les services 
                         </a>
                     </div>
                 @endforeach
