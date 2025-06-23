@@ -4,7 +4,6 @@ namespace App\PostTypes;
 
 /**
  * Classe de base pour tous les Custom Post Types
- * Automatise le formatage des données
  */
 abstract class BasePostType
 {
@@ -17,19 +16,9 @@ abstract class BasePostType
         add_action('acf/init', [$this, 'registerFields']);
     }
 
-    /**
-     * Enregistre le CPT et ses taxonomies
-     */
     abstract public function register();
-
-    /**
-     * Enregistre les champs ACF
-     */
     abstract public function registerFields();
 
-    /**
-     * Récupère tous les posts formatés
-     */
     public static function getAll($args = [])
     {
         $instance = new static();
