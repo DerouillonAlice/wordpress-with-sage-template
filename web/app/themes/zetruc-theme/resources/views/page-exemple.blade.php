@@ -1,4 +1,6 @@
-{{-- Template Name: Exemple de Page --}}
+{{-- 
+Template Name: Exemple de Page 
+--}}
 
 @extends('layouts.app')
 
