@@ -11,21 +11,16 @@ namespace App\PostTypes;
  * 3. Modifiez les propriétés $postType et $taxonomy
  * 4. Personnalisez les labels et paramètres dans register()
  * 5. Définissez vos champs ACF dans registerFields()
- * 6. Ajoutez votre formatage personnalisé dans customFormat() si nécessaire
  * 7. Ajoutez votre CPT dans app/post-types.php
  */
+
 class TEMPLATE extends BasePostType
 {
-    // CHANGEZ CES VALEURS
     protected $postType = 'your_post_type';
-    protected $taxonomy = 'your_taxonomy'; // Optionnel, supprimez si pas de taxonomie
+    protected $taxonomy = 'your_taxonomy'; // Optionnel 
 
-    /**
-     * Enregistre le Custom Post Type et ses taxonomies
-     */
     public function register()
     {
-        // 1. ENREGISTRE LE CPT
         register_post_type($this->postType, [
             'label' => 'VOTRE_LABEL_PLURIEL',
             'labels' => [
@@ -42,15 +37,15 @@ class TEMPLATE extends BasePostType
             ],
             'public' => true,
             'has_archive' => true,
-            'menu_position' => 20, // CHANGEZ LA POSITION
-            'menu_icon' => 'dashicons-admin-post', // CHANGEZ L'ICÔNE
+            'menu_position' => 20, 
+            'menu_icon' => 'dashicons-admin-post', 
             'show_in_menu' => true,
             'show_in_rest' => true,
             'rewrite' => ['slug' => $this->postType],
             'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
         ]);
 
-        // 2. ENREGISTRE LA TAXONOMIE (optionnel)
+        // (optionnel)
         if ($this->taxonomy) {
             register_taxonomy($this->taxonomy, $this->postType, [
                 'label' => 'VOTRE_TAXONOMIE_LABEL',
@@ -83,7 +78,7 @@ class TEMPLATE extends BasePostType
             'key' => 'group_' . $this->postType . '_fields',
             'title' => 'Informations',
             'fields' => [
-                // EXEMPLE DE CHAMP - PERSONNALISEZ SELON VOS BESOINS
+                // EXEMPLE DE CHAMP 
                 [
                     'key' => 'field_' . $this->postType . '_example',
                     'label' => 'Champ d\'exemple',
@@ -150,9 +145,9 @@ TYPES DE CHAMPS ACF DISPONIBLES :
 - accordion
 - tab
 - group
-- repeater
+- repeater --> pro
 - flexible_content
-- clone
+- clone --> pro
 - link
 - post_object
 - page_link
