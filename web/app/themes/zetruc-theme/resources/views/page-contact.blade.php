@@ -11,9 +11,9 @@ Template Name: Contact
         
         {{-- En-tête de la page --}}
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">{{ get_field('contact_title') ?: 'Contactez-nous' }}</h1>
-            @if (get_field('contact_subtitle'))
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">{!! get_field('contact_subtitle') !!}</p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">{{ $contact_title ?: 'Contactez-nous' }}</h1>
+            @if ($contact_subtitle)
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">{!! $contact_subtitle !!}</p>
             @endif
         </div>
 
@@ -25,7 +25,6 @@ Template Name: Contact
                 
                 <div class="contact-form-wrapper">
                         {!! do_shortcode('[contact-form-7 id="' . get_field('contact_form_id') . '"]') !!}
-
                 </div>
             </div>
 
@@ -34,7 +33,7 @@ Template Name: Contact
                 <h2 class="text-2xl font-semibold mb-6 text-gray-800">Nos coordonnées</h2>
                 
                 <div class="space-y-6">
-                    @if (get_field('contact_address'))
+                    @if ($contact_address)
                         <div class="flex items-start space-x-4">
                             <div class="flex-shrink-0 w-6 h-6 text-blue-600">
                                 <svg fill="currentColor" viewBox="0 0 20 20">
@@ -43,12 +42,12 @@ Template Name: Contact
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-800">Adresse</h3>
-                                <p class="text-gray-600">{!! get_field('contact_address') !!}</p>
+                                <p class="text-gray-600">{!! $contact_address !!}</p>
                             </div>
                         </div>
                     @endif
 
-                    @if (get_field('contact_phone'))
+                    @if ($contact_phone)
                         <div class="flex items-start space-x-4">
                             <div class="flex-shrink-0 w-6 h-6 text-blue-600">
                                 <svg fill="currentColor" viewBox="0 0 20 20">
@@ -58,15 +57,15 @@ Template Name: Contact
                             <div>
                                 <h3 class="font-semibold text-gray-800">Téléphone</h3>
                                 <p class="text-gray-600">
-                                    <a href="tel:{{ get_field('contact_phone') }}" class="hover:text-blue-600 transition">
-                                        {{ get_field('contact_phone') }}
+                                    <a href="tel:{{ $contact_phone }}" class="hover:text-blue-600 transition">
+                                        {{ $contact_phone }}
                                     </a>
                                 </p>
                             </div>
                         </div>
                     @endif
 
-                    @if (get_field('contact_email'))
+                    @if ($contact_email)
                         <div class="flex items-start space-x-4">
                             <div class="flex-shrink-0 w-6 h-6 text-blue-600">
                                 <svg fill="currentColor" viewBox="0 0 20 20">
@@ -77,15 +76,15 @@ Template Name: Contact
                             <div>
                                 <h3 class="font-semibold text-gray-800">Email</h3>
                                 <p class="text-gray-600">
-                                    <a href="mailto:{{ get_field('contact_email') }}" class="hover:text-blue-600 transition">
-                                        {{ get_field('contact_email') }}
+                                    <a href="mailto:{{ $contact_email }}" class="hover:text-blue-600 transition">
+                                        {{ $contact_email }}
                                     </a>
                                 </p>
                             </div>
                         </div>
                     @endif
 
-                    @if (get_field('contact_hours'))
+                    @if ($contact_hours)
                         <div class="flex items-start space-x-4">
                             <div class="flex-shrink-0 w-6 h-6 text-blue-600">
                                 <svg fill="currentColor" viewBox="0 0 20 20">
@@ -94,7 +93,7 @@ Template Name: Contact
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-800">Horaires</h3>
-                                <p class="text-gray-600">{!! get_field('contact_hours') !!}</p>
+                                <p class="text-gray-600">{!! $contact_hours !!}</p>
                             </div>
                         </div>
                     @endif
@@ -102,11 +101,11 @@ Template Name: Contact
             </div>
         </div>
 
-        @if (get_field('contact_map'))
+        @if ($contact_map)
             <div class="mt-12">
                 <h2 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Nous trouver</h2>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    {!! get_field('contact_map') !!}
+                    {!! $contact_map !!}
                 </div>
             </div>
         @endif
