@@ -156,16 +156,5 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
-$autoload_dirs = [
-    'inc/metaboxes',
-    'inc/pages'
-];
-
-foreach ($autoload_dirs as $dir) {
-    foreach (glob(get_theme_file_path("{$dir}/*.php")) as $file) {
-        require_once $file;
-    }
-}
-
 require_once __DIR__ . '/image-sizes.php';
 
