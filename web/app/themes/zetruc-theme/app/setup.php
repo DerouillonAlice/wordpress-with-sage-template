@@ -158,7 +158,6 @@ add_action('widgets_init', function () {
 
 $autoload_dirs = [
     'inc/metaboxes',
-    'inc/customposts',
     'inc/pages'
 ];
 
