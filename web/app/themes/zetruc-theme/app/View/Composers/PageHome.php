@@ -25,7 +25,7 @@ class PageHome extends Composer
     {
         return [
             'services' => Services::getAll(),
-            'services_categories' => Services::getCategories(), // Simple catégories
+            'services_categories' => Services::getCategories(), 
         ];
     }
 }
