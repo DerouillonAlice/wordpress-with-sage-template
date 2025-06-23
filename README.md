@@ -120,6 +120,12 @@ npm run build
 
 - [ ] Activer le thème dans Apparence > Thèmes
 
+- [ ] Régler les permaliens : Réglages > Permaliens > Titre de la publication
+
+- [ ] Créer une page d'accueil dans pages
+
+- [ ] Configurer la page d'accueil : Réglages > Lecture > Une page statique > Page d'accueil (sélectionner la page créée)
+
 #### Pour augmenter la limite d’upload (facultatif)
 
 Ajouter dans web/.htaccess :
