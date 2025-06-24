@@ -57,6 +57,11 @@ cp docker-compose.yml.example docker-compose.yml
 
 Corriger le .env en mettant le nom du projet et remplir les champs suivants
 
+```bash
+cp .env.example .env
+nano .env
+```
+
 - [ ] PROJECT_NAME
 - [ ] DB_NAME, DB_USER, DB_PASSWORD, DB_ROOT_PASSWORD
 - [ ] Génèrer et coller les salts ici → https://roots.io/salts.html
