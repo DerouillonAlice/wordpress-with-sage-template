@@ -3,9 +3,9 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
-use App\PostTypes\Services;
+use App\PostTypes\CustomPost;
 
-class PageHome extends Composer
+class PageExemple extends Composer
 {
     /**
      * List of views served by this composer.
@@ -13,7 +13,7 @@ class PageHome extends Composer
      * @var array
      */
     protected static $views = [
-        'page-home',
+        'page-exemple',
     ];
 
     /**
@@ -24,8 +24,9 @@ class PageHome extends Composer
     public function with()
     {
         return [
-            'services' => Services::getAll(),
-            'services_categories' => Services::getCategories(), 
+            'custom_posts' => CustomPost::getAll(),
+            'custom_posts_categories' => CustomPost::getCategories(),
+            'recent_posts' => CustomPost::getRecent(3),
         ];
     }
 }

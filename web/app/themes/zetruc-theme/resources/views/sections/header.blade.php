@@ -1,8 +1,24 @@
-<header class="banner">
+<header class="bg-white shadow-sm">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      
+      {{-- Logo / Nom du site --}}
+      <div class="flex items-center">
+        <a href="{{ home_url('/') }}" class="text-xl font-semibold text-gray-900">
+          {{ get_bloginfo('name') }}
+        </a>
+      </div>
 
-    @if (has_nav_menu('header_navigation'))
-    <nav class="nav-header" aria-label="{{ wp_get_nav_menu_name('header_navigation') }}">
-        {!! wp_nav_menu(['theme_location' => 'header_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
-    </nav>
-    @endif
+      {{-- Navigation principale --}}
+        <nav class="hidden md:flex space-x-8" aria-label="Navigation principale">
+          {!! wp_nav_menu([
+            'theme_location' => 'header_navigation', 
+            'menu_class' => 'flex items-center space-x-8', 
+            'container' => false,
+            'echo' => false,
+          ]) !!}
+        </nav>
+
+    </div>
+  </div>
 </header>
