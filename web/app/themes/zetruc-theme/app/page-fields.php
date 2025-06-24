@@ -9,5 +9,3 @@ new HomePageFields();
 new ExemplePageFields();
 new ContactPageFields();
 
-// Ajouter ici les nouvelles classes de champs :
-// new AboutPageFields();
