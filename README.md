@@ -124,6 +124,8 @@ npm run build
 - [ ] Installer WordPress normalement (compte admin, nom du site…)
 
 - [ ] Activer le thème dans Apparence > Thèmes
+      
+- [ ] Installer Extension "Advanced Custom Fields	(ACF)" et l'Activer
 
 - [ ] Régler les permaliens : Réglages > Permaliens > Titre de la publication
 
