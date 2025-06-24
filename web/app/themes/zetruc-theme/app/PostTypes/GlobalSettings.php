@@ -69,7 +69,7 @@ class GlobalSettings
             'public' => false,
             'show_ui' => true,
             'show_in_menu' => true,
-            'menu_position' => 30,
+            'menu_position' => 10,
             'menu_icon' => 'dashicons-admin-settings',
             'supports' => ['title'],
         ]);
@@ -180,11 +180,7 @@ class GlobalSettings
             foreach (array_keys($this->global_fields) as $field) {
                 $shared_data[$field] = get_option($field);
             }
-            
-            // // Ajouter quelques variables calculées
-            // $shared_data['social_links'] = $shared_data['social_facebook'] || $shared_data['social_twitter'] || $shared_data['social_linkedin'] || $shared_data['social_instagram'];
-            // $shared_data['site_name'] = get_option('site_name', get_bloginfo('name'));
-            
+              
             view()->share($shared_data);
         }
     }
