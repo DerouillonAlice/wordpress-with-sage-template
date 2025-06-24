@@ -1,34 +1,3 @@
 @import "tailwindcss";
 @source "../views/";
 @source "../../app/";
-@import "./forms.css";
-
-/* Splide custom styles */
-.splide__track {
-  padding: 0 !important;
-}
-
-.splide__slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.splide__arrow {
-  background: rgba(0, 0, 0, 0.7) !important;
-  border-radius: 50% !important;
-  width: 3rem !important;
-  height: 3rem !important;
-}
-
-.splide__arrow:hover {
-  background: rgba(0, 0, 0, 0.9) !important;
-}
-
-.splide__pagination__page {
-  background: #cbd5e1 !important;
-}
-
-.splide__pagination__page.is-active {
-  background: #3b82f6 !important;
-}
