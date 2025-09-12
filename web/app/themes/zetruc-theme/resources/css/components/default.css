@@ -1,0 +1,76 @@
+.default {
+    @apply text-base leading-7 text-gray-800;
+}
+
+.default h1, .default h2, .default h3, .default h4, .default h5, .default h6 {
+    @apply font-semibold text-primary mb-4 mt-6;
+}
+
+.default h1:first-child, .default h2:first-child, .default h3:first-child, 
+.default h4:first-child, .default h5:first-child, .default h6:first-child {
+    @apply mt-0;
+}
+
+.default h1 { @apply text-4xl md:text-5xl; }
+.default h2 { @apply text-3xl md:text-4xl text-secondary; }
+.default h3 { @apply text-2xl md:text-3xl; }
+.default h4 { @apply text-xl md:text-2xl; }
+.default h5 { @apply text-lg md:text-xl; }
+.default h6 { @apply text-base md:text-lg; }
+
+.default p {
+    @apply mb-4 leading-relaxed;
+}
+
+.default a {
+    @apply text-primary underline hover:text-secondary transition-colors;
+}
+
+.default ul, .default ol {
+    @apply mb-4 pl-6;
+}
+
+.default ul {
+    @apply list-disc;
+}
+
+.default ol {
+    @apply list-decimal;
+}
+
+.default li {
+    @apply mb-2;
+}
+
+.default a {
+    @apply text-primary underline hover:text-secondary transition-colors;
+}
+
+.default strong, .default b {
+    @apply font-semibold text-primary;
+}
+
+.default em, .default i {
+    @apply italic;
+}
+
+.default blockquote {
+    @apply border-l-4 border-secondary pl-4 py-2 mb-4 italic text-gray-600;
+}
+
+.default img {
+    @apply max-w-full h-auto rounded-lg shadow-md my-4;
+}
+
+.default table {
+    @apply w-full border-collapse border border-gray-300 mb-4;
+}
+
+.default th, .default td {
+    @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.default th {
+    @apply bg-gray-100 font-semibold text-primary;
+}
+
