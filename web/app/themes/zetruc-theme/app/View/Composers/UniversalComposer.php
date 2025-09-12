@@ -20,9 +20,7 @@ class UniversalComposer extends Composer
 
         if ($fields) {
             foreach ($fields as $key => $field) {
-                if ($field['type'] === 'image') {
-                    $data[$key] = is_array($field['value']) ? $field['value']['url'] ?? '' : '';
-                } else {
+                if ($field['type'] !== 'image') {
                     $data[$key] = $field['value'];
                 }
             }
