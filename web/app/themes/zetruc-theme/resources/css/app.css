@@ -16,3 +16,6 @@
   --font-family-avenir: Avenir, sans-serif;
   --font-family-montserrat: Montserrat, sans-serif;
 }
+
+
+@import "./components/default.css";
