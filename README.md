@@ -43,7 +43,7 @@ npm install -g npm
 ### 1. Cloner le repo
 
 ```bash
-git clone git@github.com:DerouillonAlice/wordpress-with-sage-template.git mon-projet
+git clone git@bitbucket.org:zetructeam/zetruc_bedrock_starter.git mon-projet
 cd mon-projet
 ```
 
@@ -77,7 +77,7 @@ sudo chown -R $USER:www-data web
 sudo chmod -R 775 web
 ```
 
-Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.config.js
+Modifier le nom du projet sur le **dossier theme** et dans le fichier vite.config.js (optionnel)
 
 ```bash
   cd web/app/themes
@@ -97,16 +97,17 @@ docker compose --env-file .env up --build -d
 
 ### 5. Installer les dépendances
 
-Dans le dossier themes (web/app/themes/mon-projet)
-
-```bash
-npm install
-composer install
-```
 
 Dans le dossier racine
 
 ```bash
+composer install
+```
+
+Dans le dossier themes (web/app/themes/mon-projet)
+
+```bash
+npm install
 composer install
 ```
 
