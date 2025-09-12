@@ -1,3 +1,21 @@
 @import "tailwindcss";
 @source "../views/";
 @source "../../app/";
+
+/* Configuration Tailwind v4 */
+@theme {
+  --color-primary: #1e4459;
+  --color-secondary: #d19c6f;
+  --color-tertiary: #e8ecee;
+  --color-background: #faf5ef;
+  
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  /* Fonts */
+  --font-family-avenir: Avenir, sans-serif;
+  --font-family-montserrat: Montserrat, sans-serif;
+}
+
+
+@import "./components/default.css";
