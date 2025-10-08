@@ -65,3 +65,9 @@ add_action('wp_dashboard_setup', function () {
     );
 });
 
+
+add_filter('admin_footer_text', function($text) {
+    return '<span id="footer-thankyou">Besoin d’aide ? Contactez l\'agence <a href="https://zetruc.fr/contact" target="_blank" rel="noopener">Zetruc</a>.</span>';
+});
+
+
