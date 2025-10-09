@@ -156,6 +156,26 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
+add_action('customize_register', function ($wp_customize) {
+    // Ajout du champ "Logo du site"
+    $wp_customize->add_setting('site_logo', [
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control(
+        new \WP_Customize_Media_Control(
+            $wp_customize,
+            'site_logo',
+            [
+                'label'    => __('Logo du site', 'sage'),
+                'section'  => 'title_tagline',
+                'mime_type'=> 'image',
+                'priority' => 8,
+            ]
+        )
+    );
+});
 
 add_action('after_setup_theme', function () {
   add_theme_support('editor-styles');   // autorise les styles éditeur
@@ -164,4 +184,5 @@ add_action('after_setup_theme', function () {
 });
 
 require_once __DIR__ . '/image-sizes.php';
+
 
