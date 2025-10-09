@@ -45,9 +45,16 @@ npm install -g npm
 ```bash
 git clone git@github.com:DerouillonAlice/wordpress-with-sage-template.git mon-projet
 cd mon-projet
+git checkout acf-pro
 ```
 
 ### 2. Initialisation
+
+Si problèmes de permission de fichier avec git, exécuter cette commande pour les ignorer :
+
+```bash
+git config core.fileMode false
+```
 
 Renommer le docker compose
 
