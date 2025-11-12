@@ -3,3 +3,5 @@
 !/public/.gitkeep
 .env
 npm-debug.log
+public/hot
+.cache/
