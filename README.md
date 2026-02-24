@@ -45,7 +45,6 @@ npm install -g npm
 ```bash
 git clone git@bitbucket.org:zetructeam/zetruc_bedrock_starter.git mon-projet
 cd mon-projet
-git checkout acf-pro
 ```
 
 ### 2. Initialisation
