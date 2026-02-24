@@ -133,7 +133,6 @@ npm run build
 **Veuillez installer les extensions AVANT d’activer le thème** pour éviter tout problème de fonctionnalités manquantes :
 
 - [ ] Installer Extension **"Advanced Custom Fields (ACF)"** et l’Activer — **ou** installer **ACF Pro** (voir ci-dessous)
-- [ ] Installer Extension "WooCommerce" et l’Activer
 - [ ] Activer le thème dans Apparence > Thèmes
 
 #### Configuration finale
