@@ -28,6 +28,10 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+        },
+    {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
     }
   ],
   "require": {
@@ -37,11 +41,11 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "^6.8",
+    "roots/wordpress": "^6.9",
     "roots/wp-config": "1.0.0",
     "roots/acorn": "^5.0",
     "log1x/acf-composer": "^3.4"
-  },
+    },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "laravel/pint": "^1.18"
