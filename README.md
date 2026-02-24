@@ -131,15 +131,56 @@ npm run build
 
 - [ ] Installer WordPress normalement (compte admin, nom du site…)
 
+**Veuillez installer les extensions AVANT d’activer le thème** pour éviter tout problème de fonctionnalités manquantes :
+
+- [ ] Installer Extension **"Advanced Custom Fields (ACF)"** et l’Activer — **ou** installer **ACF Pro** (voir ci-dessous)
+- [ ] Installer Extension "WooCommerce" et l’Activer
 - [ ] Activer le thème dans Apparence > Thèmes
-      
-- [ ] Installer Extension "Advanced Custom Fields	(ACF)" et l'Activer
+
+#### Configuration finale
 
 - [ ] Régler les permaliens : Réglages > Permaliens > Titre de la publication
 
-- [ ] Créer une page d'accueil dans pages
+- [ ] Créer une page d’accueil dans pages
 
-- [ ] Configurer la page d'accueil : Réglages > Lecture > Une page statique > Page d'accueil (sélectionner la page créée)
+- [ ] Configurer la page d’accueil : Réglages > Lecture > Une page statique > Page d’accueil (sélectionner la page créée)
+
+---
+
+#### ACF Pro (optionnel)
+
+Le thème fonctionne avec ACF gratuit. Si vous disposez d’une licence ACF Pro, des fonctionnalités supplémentaires sont disponibles (exemple: page d’options globales du site). ACF Pro peut être installé à tout moment, même après la mise en place du projet, sans aucun problème.
+
+##### 1. Configurer l’authentification
+
+Pour installer ACF Pro via Composer (dans le dossier racine) :
+
+```bash
+cp auth.json.example auth.json
+nano auth.json
+```
+
+Remplacer `VOTRE-CLE-DE-LICENCE-ACF-PRO` par votre clé de licence (disponible sur votre compte ACF Pro).
+
+##### 2. Installer ACF Pro via Composer
+
+```bash
+composer require wpengine/advanced-custom-fields-pro
+```
+
+##### 3. Activer le plugin
+
+Puis dans WordPress :
+
+- [ ] Aller dans Extensions > Extensions installées
+- [ ] Activer **Advanced Custom Fields PRO**
+- [ ] Désactiver et supprimer l’extension **Advanced Custom Fields** (gratuite) si installée précédemment, elle n’est plus nécessaire avec la version Pro
+
+Une fois activé, la page **Paramètres du site** apparaît automatiquement dans le menu WordPress (adresse, téléphone, email, réseaux sociaux, formulaire de contact).
+
+> **Note :** Sans ACF Pro, le thème fonctionne normalement — les fonctionnalités Pro sont simplement désactivées.
+
+---
 
 #### Pour augmenter la limite d’upload (facultatif)
 

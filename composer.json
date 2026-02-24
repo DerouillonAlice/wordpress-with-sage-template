@@ -28,6 +28,10 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+        },
+    {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
     }
   ],
   "require": {
@@ -41,7 +45,7 @@
     "roots/wp-config": "1.0.0",
     "roots/acorn": "^5.0",
     "log1x/acf-composer": "^3.4"
-  },
+    },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "laravel/pint": "^1.18"
